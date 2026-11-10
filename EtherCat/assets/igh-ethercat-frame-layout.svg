@@ -1,0 +1,232 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 700" font-family="'JetBrains Mono', 'Fira Code', 'Source Code Pro', Consolas, monospace">
+  <defs>
+    <filter id="sh" x="-2%" y="-2%" width="104%" height="104%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity="0.08"/>
+    </filter>
+    <marker id="arrR" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#718096"/>
+    </marker>
+    <marker id="arrL" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 10 0 L 0 5 L 10 10 z" fill="#718096"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1100" height="700" fill="#f7fafc" rx="8"/>
+
+  <!-- Title -->
+  <text x="550" y="26" text-anchor="middle" font-size="16" font-weight="700" fill="#1a365d" font-family="-apple-system, sans-serif">EtherCAT 完整以太网帧布局</text>
+  <text x="550" y="44" text-anchor="middle" font-size="11" fill="#718096" font-family="-apple-system, sans-serif">含帧间隔 (IFG)、前导码 (Preamble)、帧校验 (FCS) | 100 Mbps: 1 Byte = 80 ns</text>
+
+  <!-- ============================================ -->
+  <!-- Section 1: Complete Physical Layer Frame     -->
+  <!-- ============================================ -->
+  <text x="40" y="68" font-size="12" font-weight="700" fill="#2b6cb0" font-family="-apple-system, sans-serif">完整以太网帧 (Physical Layer @ 100BASE-TX 全双工)</text>
+
+  <!-- Frame background -->
+  <rect x="40" y="76" width="1020" height="44" rx="6" fill="#edf2f7" stroke="#a0aec0" stroke-width="1" filter="url(#sh)"/>
+
+  <!-- IFG (12B) -->
+  <rect x="50" y="80" width="95" height="34" rx="3" fill="#e2e8f0" stroke="#a0aec0" stroke-width="1"/>
+  <text x="97.5" y="98" text-anchor="middle" font-size="9" fill="#4a5568">IFG (12B)</text>
+  <text x="97.5" y="110" text-anchor="middle" font-size="7" fill="#a0aec0">960 ns</text>
+
+  <!-- Preamble (7B) -->
+  <rect x="149" y="80" width="85" height="34" rx="3" fill="#e2e8f0" stroke="#a0aec0" stroke-width="1"/>
+  <text x="191.5" y="98" text-anchor="middle" font-size="9" fill="#4a5568">Pre (7B)</text>
+  <text x="191.5" y="110" text-anchor="middle" font-size="7" fill="#a0aec0">560 ns</text>
+
+  <!-- SFD (1B) -->
+  <rect x="238" y="80" width="52" height="34" rx="3" fill="#e2e8f0" stroke="#a0aec0" stroke-width="1"/>
+  <text x="264" y="98" text-anchor="middle" font-size="9" fill="#4a5568">SFD</text>
+  <text x="264" y="110" text-anchor="middle" font-size="7" fill="#a0aec0">80 ns</text>
+
+  <!-- Dest MAC (6B) -->
+  <rect x="294" y="80" width="88" height="34" rx="3" fill="#bee3f8" stroke="#63b3ed" stroke-width="1"/>
+  <text x="338" y="98" text-anchor="middle" font-size="9" fill="#2c5282">Dest MAC</text>
+  <text x="338" y="110" text-anchor="middle" font-size="7" fill="#a0aec0">6B / 480ns</text>
+
+  <!-- Src MAC (6B) -->
+  <rect x="386" y="80" width="88" height="34" rx="3" fill="#bee3f8" stroke="#63b3ed" stroke-width="1"/>
+  <text x="430" y="98" text-anchor="middle" font-size="9" fill="#2c5282">Src MAC</text>
+  <text x="430" y="110" text-anchor="middle" font-size="7" fill="#a0aec0">6B / 480ns</text>
+
+  <!-- EtherType (2B) -->
+  <rect x="478" y="80" width="72" height="34" rx="3" fill="#fed7d7" stroke="#fc8181" stroke-width="1"/>
+  <text x="514" y="98" text-anchor="middle" font-size="9" fill="#9b2c2c">0x88A4</text>
+  <text x="514" y="110" text-anchor="middle" font-size="7" fill="#a0aec0">2B / 160ns</text>
+
+  <!-- EtherCAT Data (44-1498B) -->
+  <rect x="554" y="80" width="390" height="34" rx="3" fill="#c6f6d5" stroke="#68d391" stroke-width="1"/>
+  <text x="749" y="98" text-anchor="middle" font-size="9" fill="#276749">EtherCAT Data (44~1498 Bytes)</text>
+  <text x="749" y="110" text-anchor="middle" font-size="7" fill="#a0aec0">3.52 ~ 119.84 μs</text>
+
+  <!-- FCS (4B) -->
+  <rect x="948" y="80" width="68" height="34" rx="3" fill="#fefcbf" stroke="#ecc94b" stroke-width="1"/>
+  <text x="982" y="98" text-anchor="middle" font-size="9" fill="#975a16">FCS (4B)</text>
+  <text x="982" y="110" text-anchor="middle" font-size="7" fill="#a0aec0">320 ns</text>
+
+  <!-- Timing bracket -->
+  <line x1="50" y1="122" x2="50" y2="130" stroke="#718096" stroke-width="0.8"/>
+  <line x1="1016" y1="122" x2="1016" y2="130" stroke="#718096" stroke-width="0.8"/>
+  <line x1="50" y1="128" x2="1016" y2="128" stroke="#718096" stroke-width="0.8" marker-start="url(#arrL)" marker-end="url(#arrR)"/>
+  <text x="533" y="140" text-anchor="middle" font-size="8" fill="#718096" font-family="-apple-system, sans-serif">最小帧: 84B → 6.72 μs (含 IFG) | 最大帧: 1538B → 123.04 μs (含 IFG)</text>
+
+  <!-- Annotation labels -->
+  <text x="97.5" y="152" text-anchor="middle" font-size="7" fill="#a0aec0" font-family="-apple-system, sans-serif">帧间间隔</text>
+  <text x="191.5" y="152" text-anchor="middle" font-size="7" fill="#a0aec0" font-family="-apple-system, sans-serif">10101010 ×7</text>
+  <text x="264" y="152" text-anchor="middle" font-size="7" fill="#a0aec0" font-family="-apple-system, sans-serif">0xD5</text>
+  <text x="982" y="152" text-anchor="middle" font-size="7" fill="#a0aec0" font-family="-apple-system, sans-serif">CRC-32 校验</text>
+
+  <!-- ============================================ -->
+  <!-- Section 2: EtherCAT Header                   -->
+  <!-- ============================================ -->
+  <rect x="40" y="162" width="1020" height="42" rx="6" fill="#f0fff4" stroke="#9ae6b4" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="55" y="180" font-size="12" font-weight="700" fill="#276749" font-family="-apple-system, sans-serif">EtherCAT Header (2 Bytes)</text>
+
+  <!-- Length -->
+  <rect x="280" y="170" width="220" height="22" rx="3" fill="#c6f6d5" stroke="#68d391" stroke-width="1"/>
+  <text x="390" y="185" text-anchor="middle" font-size="9" fill="#276749">Length (11 bits) — 数据区长度</text>
+
+  <!-- Reserved -->
+  <rect x="504" y="170" width="155" height="22" rx="3" fill="#e2e8f0" stroke="#a0aec0" stroke-width="1"/>
+  <text x="581.5" y="185" text-anchor="middle" font-size="9" fill="#4a5568">Reserved (1 bit)</text>
+
+  <!-- Type -->
+  <rect x="663" y="170" width="220" height="22" rx="3" fill="#fefcbf" stroke="#ecc94b" stroke-width="1"/>
+  <text x="773" y="185" text-anchor="middle" font-size="9" fill="#975a16">Type (4 bits) = 0x1 (EtherCAT)</text>
+
+  <!-- ============================================ -->
+  <!-- Section 3: Datagram × N                      -->
+  <!-- ============================================ -->
+  <rect x="40" y="216" width="1020" height="48" rx="6" fill="#faf5ff" stroke="#d6bcfa" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="55" y="238" font-size="12" font-weight="700" fill="#6b46c1" font-family="-apple-system, sans-serif">Datagram × N (可串联)</text>
+
+  <rect x="280" y="226" width="120" height="26" rx="3" fill="#e9d8fd" stroke="#b794f4" stroke-width="1"/>
+  <text x="340" y="243" text-anchor="middle" font-size="9" fill="#553c9a">Datagram 1</text>
+
+  <rect x="404" y="226" width="120" height="26" rx="3" fill="#e9d8fd" stroke="#b794f4" stroke-width="1"/>
+  <text x="464" y="243" text-anchor="middle" font-size="9" fill="#553c9a">Datagram 2</text>
+
+  <rect x="528" y="226" width="120" height="26" rx="3" fill="#e9d8fd" stroke="#b794f4" stroke-width="1"/>
+  <text x="588" y="243" text-anchor="middle" font-size="9" fill="#553c9a">Datagram 3</text>
+
+  <text x="660" y="243" font-size="14" fill="#a0aec0">...</text>
+
+  <!-- ============================================ -->
+  <!-- Section 4: Single Datagram Detail            -->
+  <!-- ============================================ -->
+  <rect x="40" y="278" width="1020" height="265" rx="8" fill="#fff" stroke="#e2e8f0" stroke-width="2" filter="url(#sh)"/>
+  <text x="55" y="301" font-size="13" font-weight="700" fill="#1a365d" font-family="-apple-system, sans-serif">单个 Datagram 结构</text>
+
+  <!-- Header fields -->
+  <!-- Cmd -->
+  <rect x="55" y="313" width="100" height="48" rx="4" fill="#fed7d7" stroke="#fc8181" stroke-width="1.2"/>
+  <text x="105" y="334" text-anchor="middle" font-size="10" font-weight="700" fill="#9b2c2c">Cmd</text>
+  <text x="105" y="350" text-anchor="middle" font-size="8" fill="#c53030">(1 Byte)</text>
+
+  <!-- Index -->
+  <rect x="159" y="313" width="100" height="48" rx="4" fill="#fefcbf" stroke="#ecc94b" stroke-width="1.2"/>
+  <text x="209" y="334" text-anchor="middle" font-size="10" font-weight="700" fill="#975a16">Index</text>
+  <text x="209" y="350" text-anchor="middle" font-size="8" fill="#b7791f">(1 Byte)</text>
+
+  <!-- Address -->
+  <rect x="263" y="313" width="220" height="48" rx="4" fill="#ebf8ff" stroke="#90cdf4" stroke-width="1.2"/>
+  <text x="373" y="334" text-anchor="middle" font-size="10" font-weight="700" fill="#2b6cb0">Address (4 Bytes)</text>
+  <text x="373" y="350" text-anchor="middle" font-size="8" fill="#3182ce">Auto-inc / Configured / Logical</text>
+
+  <!-- Len+M -->
+  <rect x="487" y="313" width="120" height="48" rx="4" fill="#f0fff4" stroke="#9ae6b4" stroke-width="1.2"/>
+  <text x="547" y="334" text-anchor="middle" font-size="10" font-weight="700" fill="#276749">Len+M</text>
+  <text x="547" y="350" text-anchor="middle" font-size="8" fill="#38a169">(2 Bytes)</text>
+
+  <!-- IRQ -->
+  <rect x="611" y="313" width="100" height="48" rx="4" fill="#fefcbf" stroke="#ecc94b" stroke-width="1.2"/>
+  <text x="661" y="334" text-anchor="middle" font-size="10" font-weight="700" fill="#975a16">IRQ</text>
+  <text x="661" y="350" text-anchor="middle" font-size="8" fill="#b7791f">(2 Bytes)</text>
+
+  <!-- Data -->
+  <rect x="715" y="313" width="170" height="48" rx="4" fill="#e9d8fd" stroke="#b794f4" stroke-width="1.2"/>
+  <text x="800" y="334" text-anchor="middle" font-size="10" font-weight="700" fill="#553c9a">Data</text>
+  <text x="800" y="350" text-anchor="middle" font-size="8" fill="#6b46c1">(up to 1486 Bytes)</text>
+
+  <!-- WKC -->
+  <rect x="889" y="313" width="100" height="48" rx="4" fill="#fed7e2" stroke="#f687b3" stroke-width="1.2"/>
+  <text x="939" y="334" text-anchor="middle" font-size="10" font-weight="700" fill="#97266d">WKC</text>
+  <text x="939" y="350" text-anchor="middle" font-size="8" fill="#b83280">(2 Bytes)</text>
+
+  <!-- Address Detail -->
+  <text x="55" y="390" font-size="11" font-weight="600" fill="#1a365d" font-family="-apple-system, sans-serif">地址模式 (Address 4 Bytes):</text>
+
+  <!-- Auto-increment -->
+  <rect x="55" y="400" width="260" height="42" rx="4" fill="#ebf8ff" stroke="#90cdf4" stroke-width="1"/>
+  <text x="185" y="418" text-anchor="middle" font-size="10" font-weight="600" fill="#2b6cb0" font-family="-apple-system, sans-serif">Auto-increment (APxx)</text>
+  <text x="185" y="433" text-anchor="middle" font-size="8" fill="#4a5568" font-family="-apple-system, sans-serif">ADP(2B) + ADO(2B): 从站递增地址</text>
+
+  <!-- Configured -->
+  <rect x="325" y="400" width="260" height="42" rx="4" fill="#f0fff4" stroke="#9ae6b4" stroke-width="1"/>
+  <text x="455" y="418" text-anchor="middle" font-size="10" font-weight="600" fill="#276749" font-family="-apple-system, sans-serif">Configured (FPxx)</text>
+  <text x="455" y="433" text-anchor="middle" font-size="8" fill="#4a5568" font-family="-apple-system, sans-serif">ADP(2B) + ADO(2B): 固定站地址</text>
+
+  <!-- Logical -->
+  <rect x="595" y="400" width="260" height="42" rx="4" fill="#faf5ff" stroke="#d6bcfa" stroke-width="1"/>
+  <text x="725" y="418" text-anchor="middle" font-size="10" font-weight="600" fill="#6b46c1" font-family="-apple-system, sans-serif">Logical (Lxx)</text>
+  <text x="725" y="433" text-anchor="middle" font-size="8" fill="#4a5568" font-family="-apple-system, sans-serif">MappedAddr(4B): FMMU 逻辑地址</text>
+
+  <!-- Datagram Types -->
+  <text x="55" y="467" font-size="11" font-weight="600" fill="#1a365d" font-family="-apple-system, sans-serif">Datagram 命令类型一览:</text>
+
+  <text x="55" y="487" font-size="9" fill="#4a5568" font-family="-apple-system, sans-serif">
+    <tspan font-weight="600" fill="#9b2c2c">APRD</tspan>/APWR/APRW <tspan fill="#718096">Auto-inc |</tspan>
+    <tspan font-weight="600" fill="#276749">FPRD</tspan>/FPWR/FPRW <tspan fill="#718096">Configured |</tspan>
+    <tspan font-weight="600" fill="#2b6cb0">BRD</tspan>/BWR/BRW <tspan fill="#718096">Broadcast |</tspan>
+    <tspan font-weight="600" fill="#6b46c1">LRD</tspan>/LWR/LRW <tspan fill="#718096">Logical |</tspan>
+    <tspan font-weight="600" fill="#975a16">ARMW</tspan>/FRMW
+  </text>
+
+  <text x="55" y="504" font-size="9" fill="#718096" font-family="-apple-system, sans-serif">WKC (Working Counter): 每个 Datagram 末尾 2 字节，由从站在处理过程中递增，主站用于验证操作是否成功</text>
+
+  <!-- ============================================ -->
+  <!-- Section 5: Timing Summary                    -->
+  <!-- ============================================ -->
+  <rect x="40" y="555" width="1020" height="135" rx="8" fill="#fffff0" stroke="#ecc94b" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="55" y="577" font-size="12" font-weight="700" fill="#975a16" font-family="-apple-system, sans-serif">100 Mbps 传输时序参考 (100BASE-TX 全双工)</text>
+
+  <!-- Left column -->
+  <text x="60" y="600" font-size="9" fill="#4a5568" font-family="-apple-system, sans-serif">
+    <tspan font-weight="600" fill="#2b6cb0">传输速率:</tspan> 100 Mbit/s (100BASE-TX, 全双工)
+  </text>
+  <text x="60" y="618" font-size="9" fill="#4a5568" font-family="-apple-system, sans-serif">
+    <tspan font-weight="600" fill="#2b6cb0">字节传输时间:</tspan> 8 bits ÷ 100 MHz = <tspan font-weight="700" fill="#c53030">80 ns / Byte</tspan>
+  </text>
+  <text x="60" y="636" font-size="9" fill="#4a5568" font-family="-apple-system, sans-serif">
+    <tspan font-weight="600" fill="#2b6cb0">帧间隔 IFG:</tspan> 12 Bytes × 80 ns = 960 ns
+  </text>
+  <text x="60" y="654" font-size="9" fill="#4a5568" font-family="-apple-system, sans-serif">
+    <tspan font-weight="600" fill="#2b6cb0">前导码 + SFD:</tspan> 8 Bytes × 80 ns = 640 ns (Preamble: 10101010×7, SFD: 10101011)
+  </text>
+
+  <!-- Right column -->
+  <text x="560" y="600" font-size="9" fill="#4a5568" font-family="-apple-system, sans-serif">
+    <tspan font-weight="600" fill="#2b6cb0">以太网帧头:</tspan> 14 Bytes (MAC×2 + EtherType) × 80 ns = 1,120 ns
+  </text>
+  <text x="560" y="618" font-size="9" fill="#4a5568" font-family="-apple-system, sans-serif">
+    <tspan font-weight="600" fill="#2b6cb0">FCS 校验:</tspan> 4 Bytes × 80 ns = 320 ns (CRC-32 覆盖 MAC+Type+Data)
+  </text>
+  <text x="560" y="636" font-size="9" fill="#4a5568" font-family="-apple-system, sans-serif">
+    <tspan font-weight="600" fill="#2b6cb0">最小以太网帧:</tspan> 64 Bytes = 5.12 μs (不含 IFG/前导码)
+  </text>
+  <text x="560" y="654" font-size="9" fill="#4a5568" font-family="-apple-system, sans-serif">
+    <tspan font-weight="600" fill="#2b6cb0">最大以太网帧:</tspan> 1518 Bytes = 121.44 μs (不含 IFG/前导码)
+  </text>
+
+  <!-- Total timing -->
+  <line x1="55" y1="666" x2="1045" y2="666" stroke="#ecc94b" stroke-width="0.5"/>
+  <text x="550" y="682" text-anchor="middle" font-size="9" font-weight="600" fill="#975a16" font-family="-apple-system, sans-serif">
+    完整最小帧 (IFG+Pre+SFD+Frame): 84B → 6.72 μs | 完整最大帧: 1538B → 123.04 μs | 周期性通信时 IFG 后紧接下一帧
+  </text>
+  <!-- watermark -->
+  <g class="watermark">
+    <text x="1088" y="690" text-anchor="end" font-size="10" fill="#a0aec0" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif">沐多  https://www.cnblogs.com/wsg1100</text>
+  </g>
+</svg>

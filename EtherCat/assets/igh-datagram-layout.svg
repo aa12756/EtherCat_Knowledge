@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 480" font-family="'JetBrains Mono', 'Fira Code', Consolas, monospace">
+  <defs>
+    <filter id="sh" x="-2%" y="-2%" width="104%" height="104%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity="0.08"/>
+    </filter>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4a5568"/>
+    </marker>
+    <marker id="arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#e53e3e"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="880" height="480" fill="#f7fafc" rx="8"/>
+
+  <!-- Title -->
+  <text x="440" y="30" text-anchor="middle" font-size="16" font-weight="700" fill="#1a365d" font-family="-apple-system, sans-serif">多 Datagram 串联排列布局</text>
+  <text x="440" y="48" text-anchor="middle" font-size="11" fill="#718096" font-family="-apple-system, sans-serif">Multiple Datagram Concatenation — 一个 EtherCAT 帧内可串联多个 Datagram</text>
+
+  <!-- === EtherCAT Frame Boundary === -->
+  <rect x="30" y="65" width="830" height="190" rx="8" fill="#ebf8ff" stroke="#3182ce" stroke-width="2" filter="url(#sh)"/>
+  <text x="50" y="85" font-size="12" font-weight="700" fill="#2b6cb0" font-family="-apple-system, sans-serif">EtherCAT Frame (EtherType 0x88A4)</text>
+
+  <!-- EtherCAT Header -->
+  <rect x="45" y="95" width="200" height="30" rx="4" fill="#c6f6d5" stroke="#68d391" stroke-width="1.5"/>
+  <text x="145" y="114" text-anchor="middle" font-size="10" fill="#276749">EtherCAT Header (2B)</text>
+
+  <!-- Datagram 1 -->
+  <rect x="255" y="90" width="180" height="40" rx="4" fill="#fed7d7" stroke="#fc8181" stroke-width="1.5"/>
+  <text x="345" y="108" text-anchor="middle" font-size="10" font-weight="600" fill="#9b2c2c">Datagram 1</text>
+  <text x="345" y="123" text-anchor="middle" font-size="8" fill="#c53030">LRD: 读从站1输入</text>
+
+  <!-- Datagram 2 -->
+  <rect x="445" y="90" width="180" height="40" rx="4" fill="#fefcbf" stroke="#ecc94b" stroke-width="1.5"/>
+  <text x="535" y="108" text-anchor="middle" font-size="10" font-weight="600" fill="#975a16">Datagram 2</text>
+  <text x="535" y="123" text-anchor="middle" font-size="8" fill="#b7791f">LWR: 写从站1输出</text>
+
+  <!-- Datagram 3 -->
+  <rect x="635" y="90" width="180" height="40" rx="4" fill="#e9d8fd" stroke="#b794f4" stroke-width="1.5"/>
+  <text x="725" y="108" text-anchor="middle" font-size="10" font-weight="600" fill="#553c9a">Datagram 3</text>
+  <text x="725" y="123" text-anchor="middle" font-size="8" fill="#6b46c1">LRW: 读写混合</text>
+
+  <!-- Plus indicator -->
+  <text x="822" y="115" font-size="16" fill="#a0aec0" font-weight="700">+</text>
+
+  <!-- Flow arrows between datagrams -->
+  <line x1="345" y1="138" x2="345" y2="150" stroke="#4a5568" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="535" y1="138" x2="535" y2="150" stroke="#4a5568" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="725" y1="138" x2="725" y2="150" stroke="#4a5568" stroke-width="1" stroke-dasharray="3,2"/>
+
+  <!-- Direction arrow -->
+  <line x1="50" y1="160" x2="820" y2="160" stroke="#4a5568" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="435" y="178" text-anchor="middle" font-size="9" fill="#718096" font-family="-apple-system, sans-serif">数据帧发送方向 (主站 → 从站 → 主站)</text>
+
+  <!-- === Single Datagram Detail === -->
+  <rect x="45" y="190" width="800" height="50" rx="4" fill="#fff" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="55" y="207" font-size="10" font-weight="700" fill="#1a365d" font-family="-apple-system, sans-serif">单个 Datagram 内部结构:</text>
+
+  <!-- Fields -->
+  <rect x="55" y="213" width="50" height="20" rx="2" fill="#fed7d7" stroke="#fc8181" stroke-width="1"/>
+  <text x="80" y="227" text-anchor="middle" font-size="8" fill="#9b2c2c">Cmd</text>
+
+  <rect x="109" y="213" width="50" height="20" rx="2" fill="#fefcbf" stroke="#ecc94b" stroke-width="1"/>
+  <text x="134" y="227" text-anchor="middle" font-size="8" fill="#975a16">Idx</text>
+
+  <rect x="163" y="213" width="110" height="20" rx="2" fill="#ebf8ff" stroke="#90cdf4" stroke-width="1"/>
+  <text x="218" y="227" text-anchor="middle" font-size="8" fill="#2b6cb0">Addr(4B)</text>
+
+  <rect x="277" y="213" width="70" height="20" rx="2" fill="#f0fff4" stroke="#9ae6b4" stroke-width="1"/>
+  <text x="312" y="227" text-anchor="middle" font-size="8" fill="#276749">Len+M</text>
+
+  <rect x="351" y="213" width="50" height="20" rx="2" fill="#fefcbf" stroke="#ecc94b" stroke-width="1"/>
+  <text x="376" y="227" text-anchor="middle" font-size="8" fill="#975a16">IRQ</text>
+
+  <rect x="405" y="213" width="320" height="20" rx="2" fill="#e9d8fd" stroke="#b794f4" stroke-width="1"/>
+  <text x="565" y="227" text-anchor="middle" font-size="8" fill="#553c9a">Data (up to 1486 Bytes)</text>
+
+  <rect x="729" y="213" width="50" height="20" rx="2" fill="#fed7e2" stroke="#f687b3" stroke-width="1"/>
+  <text x="754" y="227" text-anchor="middle" font-size="8" fill="#97266d">WKC</text>
+
+  <!-- === On-the-fly Processing === -->
+  <rect x="30" y="265" width="830" height="200" rx="8" fill="#f0fff4" stroke="#38a169" stroke-width="2" filter="url(#sh)"/>
+  <text x="50" y="285" font-size="13" font-weight="700" fill="#276749" font-family="-apple-system, sans-serif">"On the fly" 处理：数据帧穿越从站时的 Datagram 处理</text>
+
+  <!-- Master -->
+  <rect x="50" y="300" width="100" height="50" rx="6" fill="#ebf8ff" stroke="#3182ce" stroke-width="1.5"/>
+  <text x="100" y="325" text-anchor="middle" font-size="10" font-weight="600" fill="#2b6cb0" font-family="-apple-system, sans-serif">主站</text>
+  <text x="100" y="340" text-anchor="middle" font-size="8" fill="#3182ce" font-family="-apple-system, sans-serif">Master</text>
+
+  <!-- Arrow -->
+  <line x1="150" y1="325" x2="190" y2="325" stroke="#4a5568" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Slave 1 -->
+  <rect x="190" y="295" width="140" height="60" rx="6" fill="#fff" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="260" y="315" text-anchor="middle" font-size="10" font-weight="600" fill="#1a365d" font-family="-apple-system, sans-serif">从站 1</text>
+  <rect x="200" y="325" width="55" height="20" rx="3" fill="#fed7d7" stroke="#fc8181" stroke-width="1"/>
+  <text x="227" y="339" text-anchor="middle" font-size="7" fill="#9b2c2c">处理 DG1</text>
+  <rect x="260" y="325" width="60" height="20" rx="3" fill="#e2e8f0" stroke="#a0aec0" stroke-width="1"/>
+  <text x="290" y="339" text-anchor="middle" font-size="7" fill="#718096">透传 DG2/3</text>
+
+  <!-- Arrow -->
+  <line x1="330" y1="325" x2="370" y2="325" stroke="#4a5568" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Slave 2 -->
+  <rect x="370" y="295" width="140" height="60" rx="6" fill="#fff" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="440" y="315" text-anchor="middle" font-size="10" font-weight="600" fill="#1a365d" font-family="-apple-system, sans-serif">从站 2</text>
+  <rect x="380" y="325" width="55" height="20" rx="3" fill="#fefcbf" stroke="#ecc94b" stroke-width="1"/>
+  <text x="407" y="339" text-anchor="middle" font-size="7" fill="#975a16">处理 DG2</text>
+  <rect x="440" y="325" width="60" height="20" rx="3" fill="#e2e8f0" stroke="#a0aec0" stroke-width="1"/>
+  <text x="470" y="339" text-anchor="middle" font-size="7" fill="#718096">透传 DG1/3</text>
+
+  <!-- Arrow -->
+  <line x1="510" y1="325" x2="550" y2="325" stroke="#4a5568" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Slave 3 -->
+  <rect x="550" y="295" width="140" height="60" rx="6" fill="#fff" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="620" y="315" text-anchor="middle" font-size="10" font-weight="600" fill="#1a365d" font-family="-apple-system, sans-serif">从站 3</text>
+  <rect x="560" y="325" width="55" height="20" rx="3" fill="#e9d8fd" stroke="#b794f4" stroke-width="1"/>
+  <text x="587" y="339" text-anchor="middle" font-size="7" fill="#553c9a">处理 DG3</text>
+  <rect x="620" y="325" width="60" height="20" rx="3" fill="#e2e8f0" stroke="#a0aec0" stroke-width="1"/>
+  <text x="650" y="339" text-anchor="middle" font-size="7" fill="#718096">透传 DG1/2</text>
+
+  <!-- Arrow back to master -->
+  <line x1="690" y1="325" x2="730" y2="325" stroke="#4a5568" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Return Master -->
+  <rect x="730" y="300" width="110" height="50" rx="6" fill="#ebf8ff" stroke="#3182ce" stroke-width="1.5"/>
+  <text x="785" y="322" text-anchor="middle" font-size="10" font-weight="600" fill="#2b6cb0" font-family="-apple-system, sans-serif">主站接收</text>
+  <text x="785" y="340" text-anchor="middle" font-size="8" fill="#3182ce" font-family="-apple-system, sans-serif">检查 WKC</text>
+
+  <!-- WKC explanation -->
+  <rect x="50" y="370" width="390" height="80" rx="6" fill="#fff" stroke="#fc8181" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="70" y="390" font-size="11" font-weight="700" fill="#9b2c2c" font-family="-apple-system, sans-serif">WKC (Working Counter) 工作计数器</text>
+  <text x="70" y="408" font-size="9" fill="#4a5568" font-family="-apple-system, sans-serif">每个从站处理 Datagram 时递增 WKC:</text>
+  <text x="70" y="424" font-size="9" fill="#4a5568" font-family="-apple-system, sans-serif">- 读操作: +1  |  写操作: +2  |  读写操作: +3</text>
+  <text x="70" y="440" font-size="9" fill="#e53e3e" font-family="-apple-system, sans-serif">主站检查返回的 WKC 值验证操作是否成功</text>
+
+  <!-- Concatenation rules -->
+  <rect x="460" y="370" width="390" height="80" rx="6" fill="#fff" stroke="#38a169" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="480" y="390" font-size="11" font-weight="700" fill="#276749" font-family="-apple-system, sans-serif">串联规则</text>
+  <text x="480" y="408" font-size="9" fill="#4a5568" font-family="-apple-system, sans-serif">- 单帧最多承载约 15 个 Datagram</text>
+  <text x="480" y="424" font-size="9" fill="#4a5568" font-family="-apple-system, sans-serif">- 总数据量 ≤ 1486 Bytes (受以太网帧限制)</text>
+  <text x="480" y="440" font-size="9" fill="#4a5568" font-family="-apple-system, sans-serif">- 每个 Datagram 独立寻址，可跨越不同从站</text>
+
+  <!-- Bottom note -->
+  <text x="440" y="472" text-anchor="middle" font-size="9" fill="#a0aec0" font-family="-apple-system, sans-serif">注: 串联机制使得单次总线通信可完成多个从站的数据交换，极大提高了带宽利用率</text>
+  <!-- watermark -->
+  <g class="watermark">
+    <text x="868" y="470" text-anchor="end" font-size="10" fill="#a0aec0" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif">沐多  https://www.cnblogs.com/wsg1100</text>
+  </g>
+</svg>

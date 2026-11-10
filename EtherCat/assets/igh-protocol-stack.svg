@@ -1,0 +1,207 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 620" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <defs>
+    <filter id="sh" x="-2%" y="-2%" width="104%" height="104%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity="0.08"/>
+    </filter>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4a5568"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="820" height="620" fill="#f7fafc" rx="8"/>
+
+  <!-- Title -->
+  <text x="410" y="32" text-anchor="middle" font-size="16" font-weight="700" fill="#1a365d">EtherCAT 在工业自动化协议栈中的位置</text>
+  <text x="410" y="50" text-anchor="middle" font-size="11" fill="#718096">Industrial Ethernet Protocol Stack Comparison</text>
+
+  <!-- === ISO/OSI 7-Layer Model === -->
+  <rect x="30" y="65" width="180" height="520" rx="8" fill="#fff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="120" y="86" text-anchor="middle" font-size="11" font-weight="700" fill="#1a365d">OSI 七层模型</text>
+
+  <!-- Layer 7: Application -->
+  <rect x="40" y="95" width="160" height="50" rx="4" fill="#fed7d7" stroke="#fc8181" stroke-width="1"/>
+  <text x="120" y="116" text-anchor="middle" font-size="10" font-weight="600" fill="#9b2c2c">Layer 7 应用层</text>
+  <text x="120" y="132" text-anchor="middle" font-size="8" fill="#c53030">Application</text>
+
+  <!-- Layer 6: Presentation -->
+  <rect x="40" y="150" width="160" height="40" rx="4" fill="#fefcbf" stroke="#ecc94b" stroke-width="1"/>
+  <text x="120" y="174" text-anchor="middle" font-size="10" font-weight="600" fill="#975a16">Layer 6 表示层</text>
+
+  <!-- Layer 5: Session -->
+  <rect x="40" y="195" width="160" height="40" rx="4" fill="#fefcbf" stroke="#ecc94b" stroke-width="1"/>
+  <text x="120" y="219" text-anchor="middle" font-size="10" font-weight="600" fill="#975a16">Layer 5 会话层</text>
+
+  <!-- Layer 4: Transport -->
+  <rect x="40" y="240" width="160" height="50" rx="4" fill="#ebf8ff" stroke="#90cdf4" stroke-width="1"/>
+  <text x="120" y="261" text-anchor="middle" font-size="10" font-weight="600" fill="#2b6cb0">Layer 4 传输层</text>
+  <text x="120" y="277" text-anchor="middle" font-size="8" fill="#3182ce">TCP / UDP</text>
+
+  <!-- Layer 3: Network -->
+  <rect x="40" y="295" width="160" height="50" rx="4" fill="#c6f6d5" stroke="#68d391" stroke-width="1"/>
+  <text x="120" y="316" text-anchor="middle" font-size="10" font-weight="600" fill="#276749">Layer 3 网络层</text>
+  <text x="120" y="332" text-anchor="middle" font-size="8" fill="#38a169">IP</text>
+
+  <!-- Layer 2: Data Link -->
+  <rect x="40" y="350" width="160" height="50" rx="4" fill="#e9d8fd" stroke="#b794f4" stroke-width="1"/>
+  <text x="120" y="371" text-anchor="middle" font-size="10" font-weight="600" fill="#553c9a">Layer 2 数据链路层</text>
+  <text x="120" y="387" text-anchor="middle" font-size="8" fill="#6b46c1">Ethernet MAC</text>
+
+  <!-- Layer 1: Physical -->
+  <rect x="40" y="405" width="160" height="50" rx="4" fill="#fed7e2" stroke="#f687b3" stroke-width="1"/>
+  <text x="120" y="426" text-anchor="middle" font-size="10" font-weight="600" fill="#97266d">Layer 1 物理层</text>
+  <text x="120" y="442" text-anchor="middle" font-size="8" fill="#b83280">100BASE-TX</text>
+
+  <!-- Arrow: Skip layers for EtherCAT -->
+  <text x="120" y="480" text-anchor="middle" font-size="9" fill="#718096">传统工业以太网</text>
+  <text x="120" y="496" text-anchor="middle" font-size="9" fill="#718096">需经过 TCP/IP 栈</text>
+  <text x="120" y="516" text-anchor="middle" font-size="9" fill="#e53e3e" font-weight="600">延迟: 毫秒级</text>
+
+  <!-- === EtherCAT Protocol Stack === -->
+  <rect x="230" y="65" width="200" height="520" rx="8" fill="#ebf8ff" stroke="#3182ce" stroke-width="2.5" filter="url(#sh)"/>
+  <text x="330" y="86" text-anchor="middle" font-size="12" font-weight="700" fill="#2b6cb0">EtherCAT 协议栈</text>
+
+  <!-- Application Layer -->
+  <rect x="240" y="95" width="180" height="65" rx="4" fill="#fff" stroke="#3182ce" stroke-width="1.5"/>
+  <text x="330" y="114" text-anchor="middle" font-size="11" font-weight="700" fill="#2b6cb0">应用层协议</text>
+  <text x="330" y="132" text-anchor="middle" font-size="9" fill="#4a5568">CoE (CANopen)</text>
+  <text x="330" y="146" text-anchor="middle" font-size="9" fill="#4a5568">EoE / FoE / SoE / VoE</text>
+
+  <!-- EtherCAT Data Link -->
+  <rect x="240" y="170" width="180" height="70" rx="4" fill="#c6f6d5" stroke="#38a169" stroke-width="1.5"/>
+  <text x="330" y="190" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">EtherCAT DLL</text>
+  <text x="330" y="208" text-anchor="middle" font-size="9" fill="#4a5568">Datagram 组装/解析</text>
+  <text x="330" y="222" text-anchor="middle" font-size="9" fill="#4a5568">"On the fly" 处理</text>
+
+  <!-- Distributed Clock -->
+  <rect x="240" y="250" width="180" height="50" rx="4" fill="#fefcbf" stroke="#ecc94b" stroke-width="1.5"/>
+  <text x="330" y="271" text-anchor="middle" font-size="11" font-weight="700" fill="#975a16">分布式时钟 (DC)</text>
+  <text x="330" y="289" text-anchor="middle" font-size="9" fill="#4a5568">纳秒级时间同步</text>
+
+  <!-- Direct to Ethernet -->
+  <rect x="240" y="310" width="180" height="50" rx="4" fill="#e9d8fd" stroke="#b794f4" stroke-width="1.5"/>
+  <text x="330" y="331" text-anchor="middle" font-size="11" font-weight="700" fill="#553c9a">直接以太网帧</text>
+  <text x="330" y="349" text-anchor="middle" font-size="9" fill="#4a5568">EtherType 0x88A4</text>
+
+  <!-- Physical -->
+  <rect x="240" y="370" width="180" height="45" rx="4" fill="#fed7e2" stroke="#f687b3" stroke-width="1.5"/>
+  <text x="330" y="396" text-anchor="middle" font-size="11" font-weight="700" fill="#97266d">100 Mbps 以太网物理层</text>
+
+  <!-- Key advantage -->
+  <rect x="240" y="430" width="180" height="130" rx="6" fill="#f0fff4" stroke="#38a169" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <text x="330" y="452" text-anchor="middle" font-size="10" font-weight="700" fill="#276749">核心优势</text>
+  <text x="330" y="472" text-anchor="middle" font-size="9" fill="#4a5568">无需 TCP/IP 栈</text>
+  <text x="330" y="490" text-anchor="middle" font-size="9" fill="#4a5568">直接在以太网帧上</text>
+  <text x="330" y="508" text-anchor="middle" font-size="9" fill="#4a5568">处理过程数据</text>
+  <text x="330" y="530" text-anchor="middle" font-size="10" font-weight="700" fill="#38a169">延迟: 微秒级</text>
+  <text x="330" y="548" text-anchor="middle" font-size="9" fill="#38a169">(~100 μs 周期)</text>
+
+  <!-- Highlight: EtherCAT skips TCP/IP -->
+  <line x1="220" y1="95" x2="230" y2="95" stroke="#3182ce" stroke-width="2"/>
+  <line x1="220" y1="170" x2="230" y2="170" stroke="#38a169" stroke-width="2"/>
+  <line x1="220" y1="370" x2="230" y2="370" stroke="#f687b3" stroke-width="2"/>
+
+  <!-- Dashed line showing bypass -->
+  <line x1="220" y1="260" x2="220" y2="345" stroke="#e53e3e" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="215" y="305" text-anchor="end" font-size="8" fill="#e53e3e" font-weight="600">跳过</text>
+
+  <!-- === PROFINET === -->
+  <rect x="450" y="65" width="170" height="260" rx="8" fill="#fff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="535" y="86" text-anchor="middle" font-size="11" font-weight="700" fill="#1a365d">PROFINET</text>
+
+  <rect x="460" y="95" width="150" height="35" rx="3" fill="#fed7d7" stroke="#fc8181" stroke-width="1"/>
+  <text x="535" y="116" text-anchor="middle" font-size="9" fill="#9b2c2c">PROFINET IO RT/IRT</text>
+
+  <rect x="460" y="135" width="150" height="35" rx="3" fill="#ebf8ff" stroke="#90cdf4" stroke-width="1"/>
+  <text x="535" y="156" text-anchor="middle" font-size="9" fill="#2b6cb0">UDP/IP 或 LLC</text>
+
+  <rect x="460" y="175" width="150" height="35" rx="3" fill="#e9d8fd" stroke="#b794f4" stroke-width="1"/>
+  <text x="535" y="196" text-anchor="middle" font-size="9" fill="#553c9a">Ethernet</text>
+
+  <rect x="460" y="215" width="150" height="35" rx="3" fill="#fed7e2" stroke="#f687b3" stroke-width="1"/>
+  <text x="535" y="236" text-anchor="middle" font-size="9" fill="#97266d">100 Mbps / 1 Gbps</text>
+
+  <text x="535" y="275" text-anchor="middle" font-size="9" fill="#718096">IRT: ~31.25 μs 周期</text>
+  <text x="535" y="292" text-anchor="middle" font-size="9" fill="#718096">需专用 ASIC</text>
+  <text x="535" y="312" text-anchor="middle" font-size="9" fill="#e53e3e">成本较高</text>
+
+  <!-- === EtherNet/IP === -->
+  <rect x="450" y="340" width="170" height="245" rx="8" fill="#fff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="535" y="361" text-anchor="middle" font-size="11" font-weight="700" fill="#1a365d">EtherNet/IP</text>
+
+  <rect x="460" y="370" width="150" height="35" rx="3" fill="#fed7d7" stroke="#fc8181" stroke-width="1"/>
+  <text x="535" y="391" text-anchor="middle" font-size="9" fill="#9b2c2c">CIP (Common Ind. Prot.)</text>
+
+  <rect x="460" y="410" width="150" height="35" rx="3" fill="#ebf8ff" stroke="#90cdf4" stroke-width="1"/>
+  <text x="535" y="431" text-anchor="middle" font-size="9" fill="#2b6cb0">TCP/UDP + IP</text>
+
+  <rect x="460" y="450" width="150" height="35" rx="3" fill="#e9d8fd" stroke="#b794f4" stroke-width="1"/>
+  <text x="535" y="471" text-anchor="middle" font-size="9" fill="#553c9a">Ethernet</text>
+
+  <rect x="460" y="490" width="150" height="35" rx="3" fill="#fed7e2" stroke="#f687b3" stroke-width="1"/>
+  <text x="535" y="511" text-anchor="middle" font-size="9" fill="#97266d">标准以太网物理层</text>
+
+  <text x="535" y="545" text-anchor="middle" font-size="9" fill="#718096">基于标准以太网</text>
+  <text x="535" y="562" text-anchor="middle" font-size="9" fill="#718096">延迟: ~1-10 ms</text>
+  <text x="535" y="579" text-anchor="middle" font-size="9" fill="#e53e3e">实时性一般</text>
+
+  <!-- === POWERLINK === -->
+  <rect x="640" y="65" width="160" height="260" rx="8" fill="#fff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="720" y="86" text-anchor="middle" font-size="11" font-weight="700" fill="#1a365d">POWERLINK</text>
+
+  <rect x="650" y="95" width="140" height="35" rx="3" fill="#fed7d7" stroke="#fc8181" stroke-width="1"/>
+  <text x="720" y="116" text-anchor="middle" font-size="9" fill="#9b2c2c">CANopen 映射</text>
+
+  <rect x="650" y="135" width="140" height="35" rx="3" fill="#c6f6d5" stroke="#68d391" stroke-width="1"/>
+  <text x="720" y="156" text-anchor="middle" font-size="9" fill="#276749">Poll/Resp 轮询机制</text>
+
+  <rect x="650" y="175" width="140" height="35" rx="3" fill="#e9d8fd" stroke="#b794f4" stroke-width="1"/>
+  <text x="720" y="196" text-anchor="middle" font-size="9" fill="#553c9a">Ethernet</text>
+
+  <rect x="650" y="215" width="140" height="35" rx="3" fill="#fed7e2" stroke="#f687b3" stroke-width="1"/>
+  <text x="720" y="236" text-anchor="middle" font-size="9" fill="#97266d">100 Mbps</text>
+
+  <text x="720" y="275" text-anchor="middle" font-size="9" fill="#718096">~200 μs 周期</text>
+  <text x="720" y="292" text-anchor="middle" font-size="9" fill="#718096">需要 MN 管理节点</text>
+  <text x="720" y="312" text-anchor="middle" font-size="9" fill="#e53e3e">带宽利用率低</text>
+
+  <!-- === Comparison Table === -->
+  <rect x="640" y="340" width="160" height="245" rx="8" fill="#f0fff4" stroke="#38a169" stroke-width="2" filter="url(#sh)"/>
+  <text x="720" y="362" text-anchor="middle" font-size="11" font-weight="700" fill="#276749">性能对比</text>
+
+  <text x="655" y="385" font-size="9" fill="#1a365d" font-weight="600">协议</text>
+  <text x="735" y="385" font-size="9" fill="#1a365d" font-weight="600">周期</text>
+  <text x="790" y="385" font-size="9" fill="#1a365d" font-weight="600">抖动</text>
+
+  <line x1="650" y1="390" x2="790" y2="390" stroke="#c6f6d5" stroke-width="1"/>
+
+  <text x="655" y="405" font-size="9" fill="#276749" font-weight="600">EtherCAT</text>
+  <text x="735" y="405" font-size="9" fill="#276749">~100μs</text>
+  <text x="790" y="405" font-size="9" fill="#276749">&lt;1μs</text>
+
+  <text x="655" y="422" font-size="9" fill="#4a5568">PROFINET</text>
+  <text x="735" y="422" font-size="9" fill="#4a5568">~31μs</text>
+  <text x="790" y="422" font-size="9" fill="#4a5568">&lt;1μs</text>
+
+  <text x="655" y="439" font-size="9" fill="#4a5568">EtherNet/IP</text>
+  <text x="735" y="439" font-size="9" fill="#4a5568">~1ms</text>
+  <text x="790" y="439" font-size="9" fill="#4a5568">~ms</text>
+
+  <text x="655" y="456" font-size="9" fill="#4a5568">POWERLINK</text>
+  <text x="735" y="456" font-size="9" fill="#4a5568">~200μs</text>
+  <text x="790" y="456" font-size="9" fill="#4a5568">&lt;1μs</text>
+
+  <line x1="650" y1="465" x2="790" y2="465" stroke="#c6f6d5" stroke-width="1"/>
+
+  <text x="720" y="483" text-anchor="middle" font-size="9" fill="#1a365d" font-weight="600">EtherCAT 综合优势</text>
+  <text x="720" y="500" text-anchor="middle" font-size="8" fill="#38a169">- 无需专用 ASIC</text>
+  <text x="720" y="515" text-anchor="middle" font-size="8" fill="#38a169">- 从站成本极低</text>
+  <text x="720" y="530" text-anchor="middle" font-size="8" fill="#38a169">- 带宽利用率 >90%</text>
+  <text x="720" y="545" text-anchor="middle" font-size="8" fill="#38a169">- 灵活拓扑 (线/星/树/环)</text>
+  <text x="720" y="560" text-anchor="middle" font-size="8" fill="#38a169">- IEC 61158 国际标准</text>
+  <text x="720" y="575" text-anchor="middle" font-size="8" fill="#38a169">- 开放协议 (ETG)</text>
+  <!-- watermark -->
+  <g class="watermark">
+    <text x="808" y="610" text-anchor="end" font-size="10" fill="#a0aec0" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif">沐多  https://www.cnblogs.com/wsg1100</text>
+  </g>
+</svg>

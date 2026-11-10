@@ -1,0 +1,181 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 880" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <defs>
+    <filter id="sh" x="-2%" y="-2%" width="104%" height="104%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="820" height="880" fill="#f7fafc" rx="8"/>
+
+  <!-- Title -->
+  <text x="410" y="32" text-anchor="middle" font-size="16" font-weight="700" fill="#1a365d">N32H7x5EC ESC 寄存器内存映射全景图</text>
+  <text x="410" y="50" text-anchor="middle" font-size="11" fill="#718096">EtherCAT Slave Controller — 0x0000 to 0x2FFF (基于 N32H7x5EC 数据手册)</text>
+
+  <!-- Memory map column -->
+  <!-- Base bar -->
+  <rect x="100" y="65" width="60" height="790" rx="4" fill="#edf2f7" stroke="#cbd5e0" stroke-width="1"/>
+
+  <!-- Address labels on left -->
+  <text x="90" y="80" text-anchor="end" font-size="10" fill="#4a5568" font-family="'JetBrains Mono', monospace">0x0000</text>
+  <text x="90" y="115" text-anchor="end" font-size="10" fill="#4a5568" font-family="'JetBrains Mono', monospace">0x0004</text>
+  <text x="90" y="145" text-anchor="end" font-size="10" fill="#4a5568" font-family="'JetBrains Mono', monospace">0x0010</text>
+  <text x="90" y="175" text-anchor="end" font-size="10" fill="#4a5568" font-family="'JetBrains Mono', monospace">0x0040</text>
+  <text x="90" y="205" text-anchor="end" font-size="10" fill="#4a5568" font-family="'JetBrains Mono', monospace">0x0100</text>
+  <text x="90" y="235" text-anchor="end" font-size="10" fill="#4a5568" font-family="'JetBrains Mono', monospace">0x0200</text>
+  <text x="90" y="265" text-anchor="end" font-size="10" fill="#4a5568" font-family="'JetBrains Mono', monospace">0x0300</text>
+  <text x="90" y="295" text-anchor="end" font-size="10" fill="#4a5568" font-family="'JetBrains Mono', monospace">0x0400</text>
+  <text x="90" y="330" text-anchor="end" font-size="10" fill="#4a5568" font-family="'JetBrains Mono', monospace">0x0500</text>
+  <text x="90" y="370" text-anchor="end" font-size="10" fill="#4a5568" font-family="'JetBrains Mono', monospace">0x0600</text>
+  <text x="90" y="410" text-anchor="end" font-size="10" fill="#4a5568" font-family="'JetBrains Mono', monospace">0x0800</text>
+  <text x="90" y="450" text-anchor="end" font-size="10" fill="#4a5568" font-family="'JetBrains Mono', monospace">0x0900</text>
+  <text x="90" y="500" text-anchor="end" font-size="10" fill="#4a5568" font-family="'JetBrains Mono', monospace">0x0A00</text>
+  <text x="90" y="530" text-anchor="end" font-size="10" fill="#4a5568" font-family="'JetBrains Mono', monospace">0x0E00</text>
+  <text x="90" y="560" text-anchor="end" font-size="10" fill="#4a5568" font-family="'JetBrains Mono', monospace">0x0F80</text>
+  <text x="90" y="590" text-anchor="end" font-size="10" fill="#4a5568" font-family="'JetBrains Mono', monospace">0x1000</text>
+  <text x="90" y="830" text-anchor="end" font-size="10" fill="#4a5568" font-family="'JetBrains Mono', monospace">0x2FFF</text>
+
+  <!-- Memory blocks on the bar -->
+  <!-- 0x0000-0x000F: Type/Version -->
+  <rect x="100" y="68" width="60" height="30" rx="2" fill="#fed7d7" stroke="#fc8181" stroke-width="1.2"/>
+  <!-- 0x0010-0x003F: Config Addr + Write Protect + Reset -->
+  <rect x="100" y="100" width="60" height="25" rx="2" fill="#fefcbf" stroke="#ecc94b" stroke-width="1.2"/>
+  <!-- 0x0040-0x00FF: DL Ctrl + AL Ctrl/Status + PDI -->
+  <rect x="100" y="127" width="60" height="45" rx="2" fill="#ebf8ff" stroke="#90cdf4" stroke-width="1.2"/>
+  <!-- 0x0100-0x01FF: DL Control/Status -->
+  <rect x="100" y="174" width="60" height="18" rx="2" fill="#c6f6d5" stroke="#68d391" stroke-width="1.2"/>
+  <!-- 0x0200-0x02FF: Events/Interrupts -->
+  <rect x="100" y="194" width="60" height="25" rx="2" fill="#e9d8fd" stroke="#b794f4" stroke-width="1.2"/>
+  <!-- 0x0300-0x03FF: Error Counters -->
+  <rect x="100" y="221" width="60" height="25" rx="2" fill="#fed7e2" stroke="#f687b3" stroke-width="1.2"/>
+  <!-- 0x0400-0x04FF: Watchdog -->
+  <rect x="100" y="248" width="60" height="25" rx="2" fill="#fefcbf" stroke="#ecc94b" stroke-width="1.2"/>
+  <!-- 0x0500-0x05FF: EEPROM + MII Mgmt -->
+  <rect x="100" y="275" width="60" height="40" rx="2" fill="#e2e8f0" stroke="#a0aec0" stroke-width="1.2"/>
+  <!-- 0x0600-0x067F: FMMU -->
+  <rect x="100" y="317" width="60" height="30" rx="2" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.5"/>
+  <!-- 0x0800-0x083F: Sync Manager -->
+  <rect x="100" y="349" width="60" height="30" rx="2" fill="#c6f6d5" stroke="#48bb78" stroke-width="1.5"/>
+  <!-- 0x0900-0x0A07: Distributed Clocks -->
+  <rect x="100" y="381" width="60" height="55" rx="2" fill="#fefcbf" stroke="#d69e2e" stroke-width="1.5"/>
+  <!-- 0x0E00-0x0E0F: Identification -->
+  <rect x="100" y="438" width="60" height="18" rx="2" fill="#fed7d7" stroke="#fc8181" stroke-width="1"/>
+  <!-- 0x0F80-0x0FFF: User RAM -->
+  <rect x="100" y="458" width="60" height="15" rx="2" fill="#e2e8f0" stroke="#a0aec0" stroke-width="1"/>
+  <!-- 0x1000-0x2FFF: Process Data RAM -->
+  <rect x="100" y="475" width="60" height="345" rx="2" fill="#ebf8ff" stroke="#90cdf4" stroke-width="1.5"/>
+
+  <!-- Detail descriptions on the right -->
+  <!-- 0x0000-0x000F -->
+  <line x1="160" y1="83" x2="185" y2="83" stroke="#fc8181" stroke-width="1"/>
+  <rect x="185" y="68" width="290" height="30" rx="6" fill="#fff5f5" stroke="#fc8181" stroke-width="1.2" filter="url(#sh)"/>
+  <text x="195" y="83" font-size="11" font-weight="700" fill="#9b2c2c">0x0000–0x000F: 类型与版本</text>
+  <text x="195" y="95" font-size="9" fill="#4a5568">Type(0x0), Rev(0x1), Build(0x2), FMMU#(0x4)=8, SM#(0x5)=8</text>
+
+  <!-- 0x0010-0x003F -->
+  <line x1="160" y1="113" x2="185" y2="113" stroke="#ecc94b" stroke-width="1"/>
+  <rect x="185" y="100" width="290" height="25" rx="6" fill="#fffff0" stroke="#ecc94b" stroke-width="1.2" filter="url(#sh)"/>
+  <text x="195" y="113" font-size="11" font-weight="700" fill="#975a16">0x0010–0x003F: 站地址 + 写保护 + 复位</text>
+  <text x="195" y="123" font-size="9" fill="#4a5568">CFGSA(0x10), CFGSALIAS(0x12), REGWEN(0x20), ESCWEN(0x30), RST(0x40)</text>
+
+  <!-- 0x0040-0x00FF -->
+  <line x1="160" y1="150" x2="185" y2="150" stroke="#90cdf4" stroke-width="1"/>
+  <rect x="185" y="127" width="290" height="45" rx="6" fill="#ebf8ff" stroke="#90cdf4" stroke-width="1.2" filter="url(#sh)"/>
+  <text x="195" y="142" font-size="11" font-weight="700" fill="#2b6cb0">0x0040–0x00FF: DL/AL 控制、PDI 配置</text>
+  <text x="195" y="155" font-size="9" fill="#4a5568">ALCTRL(0x120), ALSTS(0x130), ALSTSC(0x134)</text>
+  <text x="195" y="168" font-size="9" fill="#4a5568">PDICTRL(0x140), CFG(0x141), PDICFG(0x150)</text>
+
+  <!-- 0x0100-0x01FF -->
+  <line x1="160" y1="183" x2="185" y2="183" stroke="#68d391" stroke-width="1"/>
+  <rect x="185" y="174" width="290" height="18" rx="6" fill="#f0fff4" stroke="#68d391" stroke-width="1.2" filter="url(#sh)"/>
+  <text x="195" y="187" font-size="11" font-weight="700" fill="#276749">0x0100–0x01FF: DL 控制/状态 (环路/转发)</text>
+
+  <!-- 0x0200-0x02FF -->
+  <line x1="160" y1="207" x2="185" y2="207" stroke="#b794f4" stroke-width="1"/>
+  <rect x="500" y="194" width="290" height="25" rx="6" fill="#faf5ff" stroke="#b794f4" stroke-width="1.2" filter="url(#sh)"/>
+  <text x="510" y="207" font-size="11" font-weight="700" fill="#553c9a">0x0200–0x02FF: 事件/中断寄存器</text>
+  <text x="510" y="217" font-size="9" fill="#4a5568">ECATEMSK, ALEMSK, ECATEREQ, ALEREQ</text>
+  <line x1="160" y1="207" x2="500" y2="207" stroke="#b794f4" stroke-width="1" stroke-dasharray="4,2"/>
+
+  <!-- 0x0300-0x03FF -->
+  <line x1="160" y1="234" x2="500" y2="234" stroke="#f687b3" stroke-width="1" stroke-dasharray="4,2"/>
+  <rect x="500" y="221" width="290" height="25" rx="6" fill="#fff5f7" stroke="#f687b3" stroke-width="1.2" filter="url(#sh)"/>
+  <text x="510" y="234" font-size="11" font-weight="700" fill="#97266d">0x0300–0x03FF: 错误计数器</text>
+  <text x="510" y="244" font-size="9" fill="#4a5568">RXERR, FWDRXERR, EPUERR, PDIERR, LOSTLINK</text>
+
+  <!-- 0x0400-0x04FF -->
+  <line x1="160" y1="261" x2="500" y2="261" stroke="#ecc94b" stroke-width="1" stroke-dasharray="4,2"/>
+  <rect x="500" y="248" width="290" height="25" rx="6" fill="#fffff0" stroke="#ecc94b" stroke-width="1.2" filter="url(#sh)"/>
+  <text x="510" y="261" font-size="11" font-weight="700" fill="#975a16">0x0400–0x04FF: 看门狗</text>
+  <text x="510" y="271" font-size="9" fill="#4a5568">WDDIV(0x400), WDTPDI(0x410), WDTPD(0x420), WDSTS(0x440)</text>
+
+  <!-- 0x0500-0x05FF -->
+  <line x1="160" y1="295" x2="500" y2="295" stroke="#a0aec0" stroke-width="1" stroke-dasharray="4,2"/>
+  <rect x="500" y="275" width="290" height="40" rx="6" fill="#f7fafc" stroke="#a0aec0" stroke-width="1.2" filter="url(#sh)"/>
+  <text x="510" y="290" font-size="11" font-weight="700" fill="#4a5568">0x0500–0x05FF: EEPROM + MII 管理</text>
+  <text x="510" y="303" font-size="9" fill="#4a5568">EEPROM: CFG(0x500), CTRL(0x504), ADDR(0x508), DAT(0x50C)</text>
+  <text x="510" y="313" font-size="9" fill="#4a5568">MII: CTRL(0x510), PHYADDR(0x512), PHYDAT(0x514)</text>
+
+  <!-- 0x0600-0x067F -->
+  <line x1="160" y1="332" x2="185" y2="332" stroke="#4299e1" stroke-width="1.5"/>
+  <rect x="185" y="317" width="290" height="30" rx="6" fill="#ebf8ff" stroke="#4299e1" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="195" y="332" font-size="11" font-weight="700" fill="#2b6cb0">0x0600–0x067F: FMMU × 8 (每通道 16B)</text>
+  <text x="195" y="344" font-size="9" fill="#4a5568">LSA(32b), LEN(16b), LStartBit, LStopBit, PSA(16b), PSBit, Type, Act</text>
+
+  <!-- 0x0800-0x083F -->
+  <line x1="160" y1="364" x2="185" y2="364" stroke="#48bb78" stroke-width="1.5"/>
+  <rect x="185" y="349" width="290" height="30" rx="6" fill="#f0fff4" stroke="#48bb78" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="195" y="364" font-size="11" font-weight="700" fill="#276749">0x0800–0x083F: 同步管理器 × 8 (每通道 8B)</text>
+  <text x="195" y="376" font-size="9" fill="#4a5568">PSA(16b), LEN(16b), CTRL, STS, ACT, PDICTRL</text>
+
+  <!-- 0x0900-0x0A07 -->
+  <line x1="160" y1="409" x2="185" y2="409" stroke="#d69e2e" stroke-width="1.5"/>
+  <rect x="185" y="381" width="290" height="55" rx="6" fill="#fefcbf" stroke="#d69e2e" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="195" y="396" font-size="11" font-weight="700" fill="#975a16">0x0900–0x0A07: 分布式时钟 (DC)</text>
+  <text x="195" y="409" font-size="9" fill="#4a5568">RXTIME(0x900), SYSTIME(0x910,64b), OFFSET(0x920,64b)</text>
+  <text x="195" y="422" font-size="9" fill="#4a5568">DELAY(0x928), DIFF(0x92C), SYNC0/1(0x9A0/4), LATCH(0x9B0+)</text>
+  <text x="195" y="435" font-size="9" fill="#4a5568">DCACT(0x981), STARTTIME(0x990,64b), SPEEDCNT(0x930)</text>
+
+  <!-- 0x0E00-0x0E0F -->
+  <line x1="160" y1="447" x2="185" y2="447" stroke="#fc8181" stroke-width="1"/>
+  <rect x="185" y="438" width="290" height="18" rx="6" fill="#fff5f5" stroke="#fc8181" stroke-width="1" filter="url(#sh)"/>
+  <text x="195" y="451" font-size="11" font-weight="700" fill="#9b2c2c">0x0E00–0x0E0F: 识别寄存器 (Product/Vendor ID)</text>
+
+  <!-- 0x0F80-0x0FFF -->
+  <line x1="160" y1="466" x2="185" y2="466" stroke="#a0aec0" stroke-width="1"/>
+  <rect x="185" y="458" width="290" height="15" rx="6" fill="#f7fafc" stroke="#a0aec0" stroke-width="1" filter="url(#sh)"/>
+  <text x="195" y="469" font-size="10" font-weight="600" fill="#4a5568">0x0F80–0x0FFF: 用户 RAM (128 B)</text>
+
+  <!-- 0x1000-0x2FFF -->
+  <line x1="160" y1="610" x2="185" y2="610" stroke="#90cdf4" stroke-width="1.5"/>
+  <rect x="185" y="478" width="290" height="60" rx="6" fill="#ebf8ff" stroke="#90cdf4" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="195" y="496" font-size="11" font-weight="700" fill="#2b6cb0">0x1000–0x2FFF: 过程数据 RAM</text>
+  <text x="195" y="510" font-size="9" fill="#4a5568">大小: 8 KB (0x2000 字节)</text>
+  <text x="195" y="523" font-size="9" fill="#4a5568">FMMU 映射目标区域，主站通过逻辑地址读写</text>
+  <text x="195" y="536" font-size="9" fill="#4a5568">PDI 通过 AHB-to-OPB 桥并发访问</text>
+
+  <!-- Legend / Summary -->
+  <rect x="185" y="555" width="290" height="120" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" filter="url(#sh)"/>
+  <text x="195" y="572" font-size="11" font-weight="700" fill="#1a365d">N32H7x5EC 内存空间总览</text>
+
+  <rect x="195" y="580" width="12" height="10" rx="2" fill="#edf2f7" stroke="#cbd5e0"/>
+  <text x="212" y="589" font-size="9" fill="#4a5568">0x0000–0x0F7F: 寄存器 (~4 KB)</text>
+
+  <rect x="195" y="595" width="12" height="10" rx="2" fill="#e2e8f0" stroke="#a0aec0"/>
+  <text x="212" y="604" font-size="9" fill="#4a5568">0x0F80–0x0FFF: 用户 RAM (128 B)</text>
+
+  <rect x="195" y="610" width="12" height="10" rx="2" fill="#ebf8ff" stroke="#90cdf4"/>
+  <text x="212" y="619" font-size="9" fill="#4a5568">0x1000–0x2FFF: 过程数据 RAM (8 KB)</text>
+
+  <line x1="195" y1="630" x2="470" y2="630" stroke="#e2e8f0"/>
+  <text x="195" y="643" font-size="9" fill="#718096">2×MII | 8×FMMU | 8×SM | 64-bit DC | 8KB RAM</text>
+  <text x="195" y="656" font-size="9" fill="#718096">ESC 基地址: 0x400B 0000 | PDI: AHB-to-OPB</text>
+  <text x="195" y="669" font-size="9" fill="#718096">PHY: 100Mbit/s 全双工, MII (不支持 RMII)</text>
+
+  <!-- Legend -->
+  <text x="410" y="870" text-anchor="middle" font-size="9" fill="#a0aec0">基于 N32H7x5EC EtherCAT ESC 数据手册 | 寄存器详情以实际芯片手册为准</text>
+  <!-- watermark -->
+  <g class="watermark">
+    <text x="808" y="870" text-anchor="end" font-size="10" fill="#a0aec0" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif">沐多  https://www.cnblogs.com/wsg1100</text>
+  </g>
+</svg>
