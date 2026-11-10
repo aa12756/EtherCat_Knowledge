@@ -23,7 +23,7 @@ EtherCAT (Ethernet for Control Automation Technology) 是一种基于以太网�
 
 ### 协议栈位置
 
-![EtherCAT 在工业自动化协议栈中的位置](assets/igh-protocol-stack.svg)
+![EtherCAT 在工业自动化协议栈中的位置](../assets/igh-protocol-stack.svg)
 
 *图：EtherCAT 与其他工业以太网协议在 OSI 模型中的对比*
 
@@ -60,7 +60,7 @@ EtherCAT 基于标准以太网 (IEEE 802.3) 物理层，使用专有的 EtherTyp
 
 #### 帧处理流程
 
-![帧处理流程](assets/igh-frame-processing-flow.svg)
+![帧处理流程](../assets/igh-frame-processing-flow.svg)
 
 #### 核心协议组成
 
@@ -76,7 +76,7 @@ EtherCAT 基于标准以太网 (IEEE 802.3) 物理层，使用专有的 EtherTyp
 
 每个 EtherCAT 从站具有 4 个应用层状态（外加 1 个可选状态），由低到高：
 
-![EtherCAT 从站状态机](assets/igh-al-state-machine.svg)
+![EtherCAT 从站状态机](../assets/igh-al-state-machine.svg)
 
 | 状态 | 邮箱通信 | 过程数据 | 说明 |
 | --- | --- | --- | --- |
@@ -133,13 +133,13 @@ EtherCAT 数据帧基于标准 IEEE 802.3 以太网帧格式，使用 EtherType 
 > 
 > EtherCAT 物理层使用 100BASE-TX 全双工以太网 (100 Mbit/s)。在该速率下， **每传输一个字节需要 80 ns** （8 bits ÷ 100 MHz = 80 ns）。例如传输 100 字节数据需要 8 μs。
 
-![EtherCAT 完整以太网帧布局](assets/igh-ethercat-frame-layout.svg)
+![EtherCAT 完整以太网帧布局](../assets/igh-ethercat-frame-layout.svg)
 
 *图：完整的 EtherCAT 以太网帧字节级布局（含帧间隔、前导码、帧校验）*
 
 #### 帧结构层次
 
-![EtherCAT 帧结构层次](assets/igh-frame-structure-layers.svg)
+![EtherCAT 帧结构层次](../assets/igh-frame-structure-layers.svg)
 
 ---
 
@@ -207,11 +207,11 @@ EtherCAT 基于 IEEE 802.3 标准以太网，物理层使用 100BASE-TX 全双�
 
 ### 三种寻址模式
 
-![三种寻址模式](assets/igh-addressing-modes.svg)
+![三种寻址模式](../assets/igh-addressing-modes.svg)
 
 ### WKC (Working Counter) 机制
 
-![多 Datagram 串联排列与 WKC 机制](assets/igh-datagram-layout.svg)
+![多 Datagram 串联排列与 WKC 机制](../assets/igh-datagram-layout.svg)
 
 *图：多个 Datagram 串联排列及 WKC 处理流程*
 
@@ -338,11 +338,11 @@ ESC (EtherCAT Slave Controller) 是 EtherCAT 从站的 **核心通信芯片** �
 
 ### ESC 内部功能模块
 
-![ESC 内部功能模块](assets/igh-esc-internal-blocks.svg)
+![ESC 内部功能模块](../assets/igh-esc-internal-blocks.svg)
 
 ### ESC 内存映射全景
 
-![ESC 寄存器内存映射全景图](assets/igh-esc-memory-map.svg)
+![ESC 寄存器内存映射全景图](../assets/igh-esc-memory-map.svg)
 
 *图：N32H7x5EC ESC 内存映射 (0x0000–0x2FFF)*
 
@@ -354,7 +354,7 @@ ESC (EtherCAT Slave Controller) 是 EtherCAT 从站的 **核心通信芯片** �
 
 ESC 使用标准 IEEE 802.3 以太网帧，EtherType = `0x88A4` 。ESC 无 MAC/IP 地址，可处理任意 MAC/IP 的 EtherCAT 帧。帧处理顺序：端口 0 → EPU → 端口 1。帧不存储，通过时即读写，转发延迟最小化。
 
-![ESC 帧处理流程](assets/igh-esc-frame-processing.svg)
+![ESC 帧处理流程](../assets/igh-esc-frame-processing.svg)
 
 #### 环路控制
 
