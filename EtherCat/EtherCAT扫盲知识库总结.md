@@ -153,7 +153,7 @@ EtherCAT 方式：
 
 ### 3.2 帧结构：数据怎么装进网线
 
-![[Pasted image 20260506180708.png]]
+![EtherCAT 帧结构](assets/ethercat-frame-structure.png)
 
 ```
 以太网帧：
@@ -646,9 +646,9 @@ EtherCAT 只保证「帧在总线上的确定性」，但帧什么时候被主�
 | CPU 利用率 | **约 0.7%**（0~4%） | 隔离核上的 RT 负载 |
 | 累计丢帧 | **0** | 整个测试期间 |
 
-![[Pasted image 20260707105915.png]]
+![9 轴周期抖动](assets/ethercat-9axis-jitter.png)
 
-![[Pasted image 20260707110020.png]]
+![9 轴 RT 执行耗时](assets/ethercat-9axis-exec.png)
 
 > 结论：1kHz、9 轴、长时运行下，系统仍有非常大的性能余量。即使扩展到框架上限 32 轴，EtherCAT 和主站的算力也远未到瓶颈。
 
